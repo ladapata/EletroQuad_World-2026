@@ -1,6 +1,0 @@
-'default_platform' tem 80cm de diâmetro e é branca
-
-'takeoff_platform' é da cor CMYK(100,100,0,0) == RGB(0,0,255) e
-possui 4 traços na cor CMYK(0,0,0,100) == RGB(0,0,0) apontando para o centro com ~5cm de comprimento
-
-'ground_level' ainda a ser decidido
