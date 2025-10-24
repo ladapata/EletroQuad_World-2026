@@ -1,0 +1,9 @@
+'ArUco_marker' será do tamanho 25x25cm exatamente no centro da plataforma
+nele estara escrito um valor [0,99] no formato ArUco 5x5
+
+'bouncing_platforms' terão 3 figuras geométricas distintas:
+um hexágono;
+uma estrela de cinco pontas;
+um triângulo equilátero inclinado;
+todos com um 3|4|5 no centro da plataforma
+e todos na cor preta
