@@ -24,48 +24,44 @@
     </model>
     <!--Chao-->
 
-    <!--Grama
-    <model name='grass'>
-      <include><uri>models/grass</uri></include>
-      <pose>0 0 -0.4 0 0 0</pose>
-    </model>
-    Grama-->
-
     <!--Takeoff-->
-    <model name='takeoff'>
-      <include><uri>models/miscs/takeoff_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+    <include>
+      <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-    </model>
+      <pose>
+        <degrees>true</degrees>
+        0 0 0 0 0 0
+      </pose>
+    </include>
     <!--Takeoff-->
 
     <!--Manometros-->
-    <model name='manometro1'>
-      <include><uri>models/faulty_or_not/manometer</uri></include>
+    <model name='manometer1'>
+      <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <model name='pointer1' merge='true'>
-        <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
-        <pose degrees='true'>0 0 0.851 0 0 0</pose>
+      <model name='pointer1'>
+        <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
+        <pose degrees='true'>0 0 0.85 0 0 0</pose>
       </model>
       <static>true</static>
     </model>
 
-    <model name='manometro2'>
-      <include><uri>models/faulty_or_not/manometer</uri></include>
+    <model name='manometer2'>
+      <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <model name='pointer2' merge='true'>
-        <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
-        <pose degrees='true'>0 0 0.851 0 0 0</pose>
+      <model name='pointer2'>
+        <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
+        <pose degrees='true'>0 0 0.85 0 0 0</pose>
       </model>
       <static>true</static>
     </model>
 
-    <model name='manometro3'>
-      <include><uri>models/faulty_or_not/manometer</uri></include>
+    <model name='manometer3'>
+      <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <model name='pointer3' merge='true'>
-        <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
-        <pose degrees='true'>0 0 0.851 0 0 0</pose>
+      <model name='pointer3'>
+        <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
+        <pose degrees='true'>0 0 0.85 0 0 0</pose>
       </model>
       <static>true</static>
     </model>
