@@ -4,25 +4,25 @@
   <link name='takeoff_link'>
     <enable_wind>false</enable_wind>
     <include merge='true'><uri>models/miscs/default_platform</uri></include>
-    <visual name='takeoff_visual'>
+    <!--<visual name='takeoff_visual'>
       <geometry><cylinder>
-      <radius>0.4</radius>
-      <length>0.01</length>
+        <radius>0.4</radius>
+        <length>0.01</length>
       </cylinder></geometry>
       <material><ambient>1 0 0.703125 1</ambient><diffuse>1 0 0.703125 1</diffuse><specular>1 0 0.703125 1</specular></material>
-    </visual>
+    </visual>-->
     <visual name='takeoff_image'>
       <pose>0 0 0.006 0 0 0</pose>
       <geometry><cylinder>
-      <radius>0.4</radius>
-      <length>0.01</length>
+        <radius>0.4</radius>
+        <length>0.01</length>
       </cylinder></geometry>
         <material>
         <diffuse>0.7 0.7 0.7 1</diffuse>
         <specular>1 1 1 1</specular>
         <pbr>
           <metal>
-            <albedo_map>materials/textures/takeoff.png</albedo_map>
+            <albedo_map>materials/textures/takeoff.svg</albedo_map>
             <metalness>0</metalness>
             <roughness>1</roughness>
           </metal>

@@ -21,10 +21,10 @@
     <visual name='manometer_image'>
       <pose relative_to='manometer_collision'>0 0 0.851 0 0 0</pose>
       <geometry><plane>
-      <normal>0 0 1</normal>
-      <size>0.127 0.127</size>
+        <normal>0 0 1</normal>
+        <size>0.127 0.127</size>
       </plane></geometry>
-        <material>
+      <material>
         <diffuse>0.7 0.7 0.7 1</diffuse>
         <specular>1 1 1 1</specular>
         <pbr>

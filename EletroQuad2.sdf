@@ -35,6 +35,7 @@
     <model name='takeoff'>
       <include><uri>models/miscs/takeoff_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
+      <static>true</static>
     </model>
     <!--Takeoff-->
 
@@ -42,11 +43,13 @@
     <model name='transmission_line1'>
       <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
+      <static>true</static>
     </model>
     
     <model name='transmission_line2'>
       <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
+      <static>true</static>
     </model>
     <!--Linhas-->
 
@@ -54,6 +57,7 @@
     <model name='takeoff'>
       <include><uri>models/hang_the_right_wire/styro_ball</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
+      <static>true</static>
     </model>
     <!--Bola pra Marcacao-->
 

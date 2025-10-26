@@ -5,8 +5,8 @@
     <enable_wind>false</enable_wind>
     <collision name='hose_collision'>
       <geometry><cylinder>
-      <radius>0.00635</radius>
-      <length>2</length>
+        <radius>0.00635</radius>
+        <length>3</length>
       </cylinder></geometry>
       <surface>
         <friction><ode/></friction>
@@ -16,8 +16,8 @@
     </collision>
     <visual name='hose_visual'>
       <geometry><cylinder>
-      <radius>0.00635</radius>
-      <length>3</length>
+        <radius>0.00635</radius>
+        <length>3</length>
       </cylinder></geometry>
       <!-- EDITAL -->
       <material><ambient>1 0.3984375 0</ambient><diffuse>1 0.3984375 0</diffuse><specular>1 0.3984375 0</specular></material>
