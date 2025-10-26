@@ -24,12 +24,12 @@
     </model>
     <!--Chao-->
 
-    <!--Grama-->
+    <!--Grama
     <model name='grass'>
       <include><uri>models/grass</uri></include>
       <pose>0 0 -0.4 0 0 0</pose>
     </model>
-    <!--Grama-->
+    Grama-->
 
     <!--Takeoff-->
     <model name='takeoff'>
@@ -42,20 +42,28 @@
     <model name='manometro1'>
       <include><uri>models/faulty_or_not/manometer</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <model name='pointer1'>
+        <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
+        <pose degrees='true' relative_to='manometro1'>0 0 0.851 0 0 0</pose>
+      </model>
     </model>
-    <model name='manometro1'>
+
+    <model name='manometro2'>
       <include><uri>models/faulty_or_not/manometer</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <model name='pointer2'>
+        <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
+        <pose degrees='true' relative_to='manometro2'>0 0 0.851 0 0 0</pose>
+      </model>
     </model>
-    <model name='manometro1'>
+
+    <model name='manometro3'>
       <include><uri>models/faulty_or_not/manometer</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <model name='pointer3'>
+        <include><uri>models/faulty_or_not/manometer_pointer</uri></include>
+        <pose degrees='true' relative_to='manometro3'>0 0 0.851 0 0 0</pose>
+      </model>
     </model>
     <!--Manometros-->
 

@@ -24,12 +24,12 @@
     </model>
     <!--Chao-->
 
-    <!--Grama-->
+    <!--Grama
     <model name='grass'>
       <include><uri>models/grass</uri></include>
       <pose degrees='true'>0 0 -0.4 0 0 0</pose>
     </model>
-    <!--Grama-->
+    Grama-->
 
     <!--Takeoff-->
     <model name='takeoff'>
@@ -40,57 +40,135 @@
 
     <!--Gabarito ArUco-->
     <model name='gabarito'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/ArUco_marker</uri></include>
+      <model name='shape'>
+        <include><uri>models/bouncing/shapes/triangle.svg</uri></include>
+        <pose degrees='true' relative_to='gabarito'>0 0 0 0 0 0</pose>
+        <model name='marker'>
+          <include><uri>models/bouncing/ArUco_marker</uri></include>
+          <pose degrees='true' relative_to='shape'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
     <!--Gabarito ArUco-->
 
     <!--Plataformas da Prova-->
-    <model name='bouncing1'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+    <model name='3triangle'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/hexagon3.png</uri></include>
+      <model name='shape1'>
+        <include><uri>models/bouncing/shapes/triangle.svg</uri></include>
+        <pose degrees='true' relative_to='3triangle'>0 0 0 0 0 0</pose>
+        <model name='num1'>
+          <include><uri>models/bouncing/nums/num_3.svg</uri></include>
+          <pose degrees='true' relative_to='shape1'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing2'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+
+    <model name='4triangle'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/hexagon4.png</uri></include>
+      <model name='shape2'>
+        <include><uri>models/bouncing/shapes/triangle.svg</uri></include>
+        <pose degrees='true' relative_to='4triangle'>0 0 0 0 0 0</pose>
+        <model name='num2'>
+          <include><uri>models/bouncing/nums/num_4.svg</uri></include>
+          <pose degrees='true' relative_to='shape2'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing3'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+
+    <model name='5triangle'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/hexagon5.png</uri></include>
+      <model name='shape3'>
+        <include><uri>models/bouncing/shapes/triangle.svg</uri></include>
+        <pose degrees='true' relative_to='5triangle'>0 0 0 0 0 0</pose>
+        <model name='num3'>
+          <include><uri>models/bouncing/nums/num_5.svg</uri></include>
+          <pose degrees='true' relative_to='shape3'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing4'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+4
+    <model name='3star'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/star3.png</uri></include>
+      <model name='shape4'>
+        <include><uri>models/bouncing/shapes/star.svg</uri></include>
+        <pose degrees='true' relative_to='3star'>0 0 0 0 0 0</pose>
+        <model name='num4'>
+          <include><uri>models/bouncing/nums/num_3.svg</uri></include>
+          <pose degrees='true' relative_to='shape4'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing5'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+
+    <model name='4star'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/star4.png</uri></include>
+      <model name='shape5'>
+        <include><uri>models/bouncing/shapes/star.svg</uri></include>
+        <pose degrees='true' relative_to='4star'>0 0 0 0 0 0</pose>
+        <model name='num5'>
+          <include><uri>models/bouncing/nums/num_4.svg</uri></include>
+          <pose degrees='true' relative_to='shape5'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing6'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+
+    <model name='5star'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/star5.png</uri></include>
+      <model name='shape6'>
+        <include><uri>models/bouncing/shapes/star.svg</uri></include>
+        <pose degrees='true' relative_to='5star'>0 0 0 0 0 0</pose>
+        <model name='num6'>
+          <include><uri>models/bouncing/nums/num_5.svg</uri></include>
+          <pose degrees='true' relative_to='shape6'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing7'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+
+    <model name='3hexagon'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/triangle3.png</uri></include>
+      <model name='shape7'>
+        <include><uri>models/bouncing/shapes/hexagon.svg</uri></include>
+        <pose degrees='true' relative_to='3hexagon'>0 0 0 0 0 0</pose>
+        <model name='num7'>
+          <include><uri>models/bouncing/nums/num_3.svg</uri></include>
+          <pose degrees='true' relative_to='shape7'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing8'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+
+    <model name='4hexagon'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/triangle4.png</uri></include>
+      <model name='shape8'>
+        <include><uri>models/bouncing/shapes/hexagon.svg</uri></include>
+        <pose degrees='true' relative_to='4hexagon'>0 0 0 0 0 0</pose>
+        <model name='num8'>
+          <include><uri>models/bouncing/nums/num_4.svg</uri></include>
+          <pose degrees='true' relative_to='shape8'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <model name='bouncing9'>
-      <include><uri>models/bouncing/bouncing_platforms</uri></include>
+
+    <model name='5hexagon'>
+      <include><uri>models/miscs/default_platform</uri></include>
       <pose degrees='true'>0 0 0 0 0 0</pose>
-      <include><uri>models/bouncing/bouncing_platforms/materials/textures/triangle5.png</uri></include>
+      <model name='shape9'>
+        <include><uri>models/bouncing/shapes/hexagon.svg</uri></include>
+        <pose degrees='true' relative_to='5hexagon'>0 0 0 0 0 0</pose>
+        <model name='num9'>
+          <include><uri>models/bouncing/nums/num_5.svg</uri></include>
+          <pose degrees='true' relative_to='shape9'>0 0 0 0 0 0</pose>
+        </model>
+      </model>
     </model>
     <!--Plataformas da Prova-->
 
