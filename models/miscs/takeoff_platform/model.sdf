@@ -3,7 +3,7 @@
 <model name='takeoff_platform'>
   <link name='takeoff_link'>
     <enable_wind>false</enable_wind>
-    <include merge='true'><uri>models/miscs/default_platform</uri></include>
+    <include><uri>models/miscs/default_platform</uri></include>
     <!--<visual name='takeoff_visual'>
       <geometry><cylinder>
         <radius>0.4</radius>
@@ -22,7 +22,7 @@
         <specular>1 1 1 1</specular>
         <pbr>
           <metal>
-            <albedo_map>materials/textures/takeoff.svg</albedo_map>
+            <albedo_map>materials/textures/takeoff.png</albedo_map>
             <metalness>0</metalness>
             <roughness>1</roughness>
           </metal>

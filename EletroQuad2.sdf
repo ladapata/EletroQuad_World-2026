@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version='1.10'>
-  <world name='EletroQuad'>
+  <world name='EletroQuad2'>
 
     <physics type='ode'>
       <max_step_size>0.001</max_step_size>

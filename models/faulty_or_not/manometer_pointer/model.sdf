@@ -24,7 +24,7 @@
         <specular>1 1 1 1</specular>
         <pbr>
           <metal>
-            <albedo_map>materials/textures/pointer.svg</albedo_map>
+            <albedo_map>materials/textures/pointer.png</albedo_map>
             <metalness>0</metalness>
             <roughness>1</roughness>
           </metal>

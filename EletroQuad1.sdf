@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version='1.10'>
-  <world name='EletroQuad'>
+  <world name='EletroQuad1'>
 
     <physics type='ode'>
       <max_step_size>0.001</max_step_size>
@@ -59,7 +59,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <albedo_map>models/bouncing/shapes/???.svg</albedo_map>
+              <albedo_map>models/bouncing/shapes/???.png</albedo_map>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -87,7 +87,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/triangle.svg</uri></include>
+              <include><uri>models/bouncing/shapes/triangle.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -107,7 +107,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_3.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_3.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -133,7 +133,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/triangle.svg</uri></include>
+              <include><uri>models/bouncing/shapes/triangle.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -153,7 +153,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_4.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_4.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -179,7 +179,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/triangle.svg</uri></include>
+              <include><uri>models/bouncing/shapes/triangle.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -199,7 +199,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_5.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_5.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -225,7 +225,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/star.svg</uri></include>
+              <include><uri>models/bouncing/shapes/star.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -245,7 +245,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_3.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_3.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -271,7 +271,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/star.svg</uri></include>
+              <include><uri>models/bouncing/shapes/star.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -291,7 +291,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_4.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_4.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -317,7 +317,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/star.svg</uri></include>
+              <include><uri>models/bouncing/shapes/star.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -337,7 +337,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_5.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_5.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -363,7 +363,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/hexagon.svg</uri></include>
+              <include><uri>models/bouncing/shapes/hexagon.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -383,7 +383,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_3.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_3.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -409,7 +409,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/hexagon.svg</uri></include>
+              <include><uri>models/bouncing/shapes/hexagon.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -429,7 +429,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_4.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_4.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -455,7 +455,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/shapes/hexagon.svg</uri></include>
+              <include><uri>models/bouncing/shapes/hexagon.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
@@ -475,7 +475,7 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <include><uri>models/bouncing/nums/num_5.svg</uri></include>
+              <include><uri>models/bouncing/nums/num_5.png</uri></include>
               <metalness>0</metalness>
               <roughness>1</roughness>
             </metal>
