@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version='1.10'>
 <model name='transmission_line'>
-  <model name='line'>
-    <include><uri>hose</uri></include>
-    <pose degrees='true'>0 0 1.5 90 0 0</pose>
-  </model>
+  <include merge='true'>
+    <uri>models/hang_the_right_wire/transmission_line/hose</uri>
+    <pose degrees='true'>0 0 1.6 0 90 0</pose>
+  </include>
   <model name='pole1'>
-    <include><uri>pole</uri></include>
-    <pose degrees='true' relative_to='line'>0 -1.48 0 0 0 0</pose>
+    <include merge='true'><uri>models/hang_the_right_wire/transmission_line/pole</uri></include>
+    <pose degrees='true'>-1.48 0 0.85 0 0 0</pose>
   </model>
   <model name='pole2'>
-    <include><uri>pole</uri></include>
-    <pose degrees='true' relative_to='line'>0 1.48 0 0 0 0</pose>
+    <include merge='true'><uri>models/hang_the_right_wire/transmission_line/pole</uri></include>
+    <pose degrees='true'>1.48 0 0.85 0 0 0</pose>
   </model>
   <enable_wind>false</enable_wind>
 </model>

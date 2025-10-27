@@ -4,7 +4,7 @@
   <link name='manometer_link'>
     <enable_wind>false</enable_wind>
     <collision name='manometer_collision'>
-      <geometry><box><size>0.127 0.127 1.7</size></box></geometry>
+      <geometry><box><size>0.15 0.15 1.7</size></box></geometry>
       <surface>
         <friction><ode/></friction>
         <bounce/>
@@ -12,20 +12,20 @@
       </surface>
     </collision>
     <visual name='manometer_visual'>
-      <geometry><box><size>0.127 0.127 1.7</size></box></geometry>
+      <geometry><box><size>0.15 0.15 1.7</size></box></geometry>
       <material>
         <diffuse>0.7 0.7 0.7 1</diffuse>
         <specular>1 1 1 1</specular>
       </material>
     </visual>
     <visual name='manometer_image'>
-      <pose relative_to='manometer_collision'>0 0 0.85 0 0 0</pose>
+      <pose relative_to='manometer_collision'>0 0 0.8501 0 0 0</pose>
       <geometry><plane>
         <normal>0 0 1</normal>
         <size>0.127 0.127</size>
       </plane></geometry>
       <material>
-        <diffuse>0.7 0.7 0.7 1</diffuse>
+        <diffuse>1 1 1 1</diffuse>
         <specular>1 1 1 1</specular>
         <pbr>
           <metal>

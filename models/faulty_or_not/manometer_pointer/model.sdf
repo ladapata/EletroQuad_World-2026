@@ -6,7 +6,7 @@
     <visual name='pointer_image'>
       <geometry><plane>
         <normal>0 0 1</normal>
-        <size>0.127 0.127</size>
+        <size>0.1 0.1</size>
       </plane></geometry>
       <material>
         <diffuse>1 1 1 1</diffuse>

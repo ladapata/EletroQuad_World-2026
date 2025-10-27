@@ -3,25 +3,14 @@
 <model name='ArUco_marker'>
   <link name='ArUco_link'>
     <enable_wind>false</enable_wind>
-    <!--<collision name='ArUco_collision'>
-      <geometry><plane>
-      <normal>0 0 1</normal>
-      <size>0.025 0.025</size>
-      </plane></geometry>
-      <surface>
-        <friction><ode/></friction>
-        <bounce/>
-        <contact/>
-      </surface>
-    </collision>-->
     <visual name='ArUco_visual'>
       <geometry><plane>
         <normal>0 0 1</normal>
         <size>0.025 0.025</size>
       </plane></geometry>
       <material>
-        <diffuse>1 1 1 0</diffuse>
-        <specular>1 1 1 0</specular>
+        <diffuse>0 0 0 1</diffuse>
+        <specular>1 1 1 1</specular>
       </material>
     </visual>
     <!--<visual name='ArUco_image'>

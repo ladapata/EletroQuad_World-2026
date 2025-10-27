@@ -4,7 +4,7 @@
   <link name='pole_link'>
     <enable_wind>false</enable_wind>
     <collision name='pole_collision'>
-      <geometry><box><size>1 1 1</size></box></geometry>
+      <geometry><box><size>0.2 0.2 1.7</size></box></geometry>
       <surface>
         <friction><ode/></friction>
         <bounce/>
@@ -14,7 +14,7 @@
     <visual name='pole_visual'>
       <geometry><box><size>0.2 0.2 1.7</size></box></geometry>
       <material>
-        <diffuse>0.7 0.7 0.7 1</diffuse>
+        <diffuse>0.15 0.15 0.15 1</diffuse>
         <specular>1 1 1 1</specular>
       </material>
     </visual>

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version='1.10'>
-  <world name='EletroQuad1'>
+  <world name='EletroQuad2026'>
 
     <physics type='ode'>
       <max_step_size>0.001</max_step_size>
@@ -18,474 +18,155 @@
       <shadows>true</shadows>
     </scene>
 
-    <!--Chao-->
+    <!-- Chao -->
     <model name='ground'>
-      <include><uri>models/miscs/ground_level</uri></include>
+      <include merge='true'><uri>models/miscs/ground_level</uri></include>
     </model>
-    <!--Chao-->
+    <!-- Chao -->
 
-    <!--Grama
-    <model name='grass'>
-      <include><uri>models/grass</uri></include>
-      <pose degrees='true'>0 0 -0.4 0 0 0</pose>
-    </model>
-    Grama-->
-
-    <!--Takeoff-->
-    <model name='takeoff'>
-      <include><uri>models/miscs/takeoff_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+    <!-- Takeoff -->
+    <include>
+      <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-    </model>
-    <!--Takeoff-->
+      <pose degrees='true'>0 0 0 0 0 0</pose>
+    </include>
+    <!-- Takeoff -->
 
-    <!--Gabarito ArUco-->
+    <!-- Gabarito ArUco -->
     <model name='gabarito'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>2 2 0 0 0 0</pose>
       <model name='aruco'>
-        <include><uri>models/bouncing/ArUco_marker</uri></include>
-        <pose degrees='true'>0 0 0 0 0 0</pose>
+        <include merge='true'><uri>models/bouncing/ArUco_marker</uri></include>
+        <pose degrees='true'>0 0 0.001 0 0 0</pose>
       </model>
-      <link name='shape0'>
-        <visual name='image0'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><cylinder>
-            <radius>0.4</radius>
-            <length>0.01</length>
-          </cylinder></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <albedo_map>models/bouncing/shapes/???.png</albedo_map>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
+      <model name='shape0'>
+        <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
+        <pose degrees='true'>0 0 0.001 0 0 0</pose>
+      </model>
     </model>
-    <!--Gabarito ArUco-->
+    <!-- Gabarito ArUco -->
 
-    <!--Plataformas da Prova-->
-    <model name='3triangle'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape1'>
-        <visual name='shape_image1'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/triangle.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number1'>
-        <visual name='number_image1'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_3.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
-    </model>
-
-    <model name='4triangle'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape2'>
-        <visual name='shape_image2'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/triangle.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number2'>
-        <visual name='number_image2'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_4.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
-    </model>
-
-    <model name='5triangle'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape3'>
-        <visual name='shape_image3'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/triangle.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number3'>
-        <visual name='number_image3'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_5.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
-    </model>
-
-    <model name='3star'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape4'>
-        <visual name='shape_image4'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/star.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number4'>
-        <visual name='number_image4'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_3.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
-    </model>
-
-    <model name='4star'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape5'>
-        <visual name='shape_image5'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/star.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number5'>
-        <visual name='number_image5'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_4.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
-    </model>
-
-    <model name='5star'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape6'>
-        <visual name='shape_image6'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/star.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number6'>
-        <visual name='number_image6'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_5.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
-    </model>
-
+    <!-- Plataformas da Prova -->
     <model name='3hexagon'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape7'>
-        <visual name='shape_image7'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/hexagon.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number7'>
-        <visual name='number_image7'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_3.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>3 0 0 0 0 -90</pose>
+      <model name='shape1'>
+        <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num1'>
+          <include merge='true'><uri>models/bouncing/nums/num_3</uri></include>
+         <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
     </model>
 
     <model name='4hexagon'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape8'>
-        <visual name='shape_image8'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/hexagon.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number8'>
-        <visual name='number_image8'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_4.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>2 0 0 0 0 -90</pose>
+      <model name='shape2'>
+        <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num2'>
+          <include merge='true'><uri>models/bouncing/nums/num_4</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
     </model>
 
     <model name='5hexagon'>
-      <include><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
-      <link name='shape9'>
-        <visual name='shape_image9'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/shapes/hexagon.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <link name='number9'>
-        <visual name='number_image9'>
-          <pose>0 0 0.006 0 0 0</pose>
-          <geometry><plane>
-            <normal>0 0 1</normal>
-            <size>0.8 0.8</size>
-          </plane></geometry>
-          <material>
-          <diffuse>0.7 0.7 0.7 1</diffuse>
-          <specular>1 1 1 1</specular>
-          <pbr>
-            <metal>
-              <include><uri>models/bouncing/nums/num_5.png</uri></include>
-              <metalness>0</metalness>
-              <roughness>1</roughness>
-            </metal>
-          </pbr>
-          </material>
-        </visual>
-      </link>
-      <static>true</static>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>1 0 0 0 0 -90</pose>
+      <model name='shape3'>
+        <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num3'>
+          <include merge='true'><uri>models/bouncing/nums/num_5</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
     </model>
-    <!--Plataformas da Prova-->
+
+    <model name='3star'>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>0 3 0 0 0 -90</pose>
+      <model name='shape4'>
+        <include merge='true'><uri>models/bouncing/shapes/star</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num4'>
+          <include merge='true'><uri>models/bouncing/nums/num_3</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
+    </model>
+
+    <model name='4star'>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>0 2 0 0 0 -90</pose>
+      <model name='shape5'>
+        <include merge='true'><uri>models/bouncing/shapes/star</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num5'>
+          <include merge='true'><uri>models/bouncing/nums/num_4</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
+    </model>
+
+    <model name='5star'>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>0 1 0 0 0 -90</pose>
+      <model name='shape6'>
+        <include merge='true'><uri>models/bouncing/shapes/star</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num6'>
+          <include merge='true'><uri>models/bouncing/nums/num_5</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
+    </model>
+
+    <model name='3triangle'>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>-3 0 0 0 0 -90</pose>
+      <model name='shape7'>
+        <include merge='true'><uri>models/bouncing/shapes/triangle</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num7'>
+          <include merge='true'><uri>models/bouncing/nums/num_3</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
+    </model>
+
+    <model name='4triangle'>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>-2 0 0 0 0 -90</pose>
+      <model name='shape8'>
+        <include merge='true'><uri>models/bouncing/shapes/triangle</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num8'>
+          <include merge='true'><uri>models/bouncing/nums/num_4</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
+    </model>
+
+    <model name='5triangle'>
+      <include merge='true'><uri>models/miscs/default_platform</uri></include>
+      <pose degrees='true'>-1 0 0 0 0 -90</pose>
+      <model name='shape9'>
+        <include merge='true'><uri>models/bouncing/shapes/triangle</uri></include>
+        <pose degrees='true'>0 0 0.002 0 0 0</pose>
+        <model name='num9'>
+          <include merge='true'><uri>models/bouncing/nums/num_5</uri></include>
+          <pose degrees='true'>0 0 0.001 0 0 0</pose>
+        </model>
+      </model>
+    </model>
+
+    
+    <!-- Plataformas da Prova -->
 
     <!-- Luz -->
     <light name='sun' type='directional'>
