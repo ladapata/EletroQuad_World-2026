@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version='1.10'>
 <model name='star'>
-  <include merge='true'><uri>models/miscs/default_platform</uri></include>
   <link name='star_link'>
     <enable_wind>false</enable_wind>
     <visual name='star_img'>
