@@ -35,7 +35,7 @@
     <!-- Gabarito ArUco -->
     <model name='gabarito'>
       <include merge='true'><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>2 2 0 0 0 0</pose>
+      <pose degrees='true'>2 2 0 0 0 -90</pose>
       <model name='aruco'>
         <include merge='true'><uri>models/bouncing/ArUco_marker</uri></include>
         <pose degrees='true'>0 0 0.001 0 0 0</pose>
