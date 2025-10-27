@@ -3,7 +3,7 @@
 ## Como usar este repositório:
 - Clone o repositório;
 - Apague os mundos que você não quiser;
-- renomeie o mundo restante para `EletroQuad2026.sdf`.
+- Renomeie o mundo restante para `EletroQuad2026.sdf`.
 
 ## "EletroQuad1" == Bouncing 2.0
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend dui ipsum, eu pharetra metus ullamcorper in. Aliquam erat volutpat. Phasellus iaculis leo justo, ac facilisis tellus euismod non. Donec et leo dolor. Praesent condimentum elit leo, vitae ultricies orci molestie at. Duis auctor magna quis dolor convallis, ut lacinia metus placerat. Nullam posuere nunc eu tincidunt blandit. Phasellus in nisi commodo nulla ornare blandit eu at felis. Praesent tempor magna dapibus placerat vehicula. Phasellus sed pretium leo, vel maximus lectus. Vivamus eros mi, semper sed elit eget, fermentum tincidunt sem. Mauris fermentum odio eget erat imperdiet, sit amet lobortis massa volutpat. Morbi a neque at urna tempus ullamcorper. Phasellus tempor leo sed aliquet ultrices. Quisque gravida luctus ipsum quis tempor.
