@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version='1.10'>
+<model name='arena_m2'>
+  <link name='arena-m2_link'>
+    <enable_wind>false</enable_wind>
+    <collision name='arena-m2_collision'>
+      <geometry><plane>
+        <normal>0 0 1</normal>
+        <size>7 7</size>
+      </plane></geometry>
+      <surface>
+        <friction><ode/></friction>
+        <bounce/>
+        <contact/>
+      </surface>
+    </collision>
+    <visual name='arena-m2_visual'>
+      <geometry><plane>
+        <normal>0 0 1</normal>
+        <size>7 7</size>
+      </plane></geometry>
+      <material>
+        <ambient>1 1 1 1</ambient>
+        <diffuse>1 1 1 1</diffuse>
+        <specular>1 1 1 1</specular>
+      </material>
+    </visual>
+  </link>
+  <self_collide>false</self_collide>
+</model>
+</sdf>
