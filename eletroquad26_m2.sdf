@@ -22,7 +22,7 @@
     <model name='styro_ball'>
       <include><uri>models/hang_the_right_wire/styro_ball</uri></include>
       <!-- sinal negativo no segundo numero bota ela na linha esquerda -->
-      <pose degrees='true'>-1.25 2.5 1.6 0 0 0</pose>
+      <pose degrees='true' relative_to='arena_frame'>-1.25 2.5 1.6 0 0 0</pose>
       <!-- mexa no primeiro numero para decidir onde NA LINHA a bola fica, intervalo de [1.25,-1.25] -->
       <static>true</static>
     </model>
@@ -36,9 +36,9 @@
     
     <!-- Arena -->
     <model name='arena'>
-      <include merge='true'><uri>models/miscs/arena_m2</uri></include>
+      <include merge='true'><uri>models/miscs/arena</uri></include>
       <static>true</static>
-      <pose degrees='true'>0 0 0.1 0 0 0</pose>
+      <pose degrees='true'>0 0 0.02 0 0 0</pose>
     </model>
     <!-- Arena -->
 
@@ -46,20 +46,20 @@
     <include>
       <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <pose degrees='true' relative_to='arena_frame'>0 0 0 0 0 0</pose>
     </include>
     <!-- Takeoff -->
 
     <!-- Linhas -->
     <model name='transmission_line1'>
       <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
-      <pose degrees='true'>0 -2.5 0 0 0 0</pose>
+      <pose degrees='true' relative_to='arena_frame'>0 -2.5 0 0 0 0</pose>
       <static>true</static>
     </model>
     
     <model name='transmission_line2'>
       <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
-      <pose degrees='true'>0 2.5 0 0 0 0</pose>
+      <pose degrees='true' relative_to='arena_frame'>0 2.5 0 0 0 0</pose>
       <static>true</static>
     </model>
     <!-- Linhas -->
