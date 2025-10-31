@@ -18,72 +18,79 @@
       <shadows>true</shadows>
     </scene>
 
-    <!-- Manometros -->
-    <model name='manometer1'>
-      <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <!-- posicao do manometro1 (mexa apenas nos 2 primeiros numeros) -->
-      <pose degrees='true'>1 0.5 0.85 0 0 -90</pose>
-      <!-- posicao do manometro1 (mexa apenas nos 2 primeiros numeros) -->
-      <model name='pointer1'>
-        <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-        <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
-        <pose degrees='true'>0 0.009 0.85011 0 0 120</pose>
-        <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
-      </model>
-      <static>true</static>
-    </model>
+    <frame name='above_grid'>
+      <pose degrees='true'>0 0 0.02 0 0 0</pose>
+    </frame>
 
-    <model name='manometer2'>
-      <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <!-- posicao do manometro2 (mexa apenas nos 2 primeiros numeros) -->
-      <pose degrees='true'>1 0 0.85 0 0 -90</pose>
-      <!-- posicao do manometro2 (mexa apenas nos 2 primeiros numeros) -->
-      <model name='pointer2'>
-        <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-        <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
-        <pose degrees='true'>0 0.009 0.85011 0 0 150</pose>
-        <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+    <model name='mission'>
+    <pose relative_to='above_grid'/>
+      <!-- Manometros -->
+      <model name='manometer1'>
+        <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
+        <!-- posicao do manometro1 (mexa apenas nos 2 primeiros numeros) -->
+        <pose degrees='true'>1 0.5 0.85 0 0 -90</pose>
+        <!-- posicao do manometro1 (mexa apenas nos 2 primeiros numeros) -->
+        <model name='pointer1'>
+          <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
+          <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+          <pose degrees='true'>0 0.009 0.85011 0 0 120</pose>
+          <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+        </model>
+        <static>true</static>
       </model>
-      <static>true</static>
-    </model>
-    
-    <model name='manometer3'>
-      <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <!-- posicao do manometro3 (mexa apenas nos 2 primeiros numeros) -->
-      <pose degrees='true'>1 -0.5 0.85 0 0 -90</pose>
-      <!-- posicao do manometro3 (mexa apenas nos 2 primeiros numeros) -->
-      <model name='pointer3'>
-        <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-        <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
-        <pose degrees='true'>0 0.009 0.85011 0 0 90</pose>
-        <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+
+      <model name='manometer2'>
+        <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
+        <!-- posicao do manometro2 (mexa apenas nos 2 primeiros numeros) -->
+        <pose degrees='true'>1 0 0.85 0 0 -90</pose>
+        <!-- posicao do manometro2 (mexa apenas nos 2 primeiros numeros) -->
+        <model name='pointer2'>
+          <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
+          <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+          <pose degrees='true'>0 0.009 0.85011 0 0 150</pose>
+          <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+        </model>
+        <static>true</static>
       </model>
-      <static>true</static>
-    </model>
-    <!-- Manometros -->
 
-
-    <!-- Chao -->
-    <model name='ground'>
-      <include merge='true'><uri>models/miscs/ground_level</uri></include>
+      <model name='manometer3'>
+        <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
+        <!-- posicao do manometro3 (mexa apenas nos 2 primeiros numeros) -->
+        <pose degrees='true'>1 -0.5 0.85 0 0 -90</pose>
+        <!-- posicao do manometro3 (mexa apenas nos 2 primeiros numeros) -->
+        <model name='pointer3'>
+          <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
+          <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+          <pose degrees='true'>0 0.009 0.85011 0 0 90</pose>
+          <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+        </model>
+        <static>true</static>
+      </model>
+      <!-- Manometros -->
     </model>
-    <!-- Chao -->
-    
-    <!-- Arena -->
-    <model name='arena'>
-      <include merge='true'><uri>models/miscs/arena_m1-m3</uri></include>
-      <static>true</static>
-      <pose degrees='true'>0 0 0.1 0 0 0</pose>
-    </model>
-    <!-- Arena -->
 
     <!-- Takeoff -->
     <include>
       <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <pose degrees='true' relative_to='above_grid'/>0 0 0.01 0 0 0</pose>
     </include>
     <!-- Takeoff -->
+    
+    <!-- Arena -->
+    <include>
+      <uri>models/miscs/arena</uri>
+      <static>true</static>
+      <pose relative_to='above_grid'/>
+    </include>
+    <!-- Arena -->
+
+    <!-- Chao -->
+    <include>
+      <uri>models/miscs/ground_level</uri>
+      <pose/>
+    </include>
+    <!-- Chao -->
 
     <!-- Luz -->
     <light name='sun' type='directional'>
@@ -108,11 +115,11 @@
     <!-- Luz -->
 
   <spherical_coordinates>
-		<surface_model>EARTH_WGS84</surface_model>
-		<world_frame_orientation>ENU</world_frame_orientation>
-		<latitude_deg>47.397971057728974</latitude_deg>
-		<longitude_deg>8.546163739800146</longitude_deg>
-		<elevation>0</elevation>
-	</spherical_coordinates>
+    <surface_model>EARTH_WGS84</surface_model>
+    <world_frame_orientation>ENU</world_frame_orientation>
+    <latitude_deg>47.397971057728974</latitude_deg>
+    <longitude_deg>8.546163739800146</longitude_deg>
+    <elevation>0</elevation>
+  </spherical_coordinates>
   </world>
 </sdf>

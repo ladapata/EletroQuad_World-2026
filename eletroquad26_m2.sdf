@@ -18,51 +18,59 @@
       <shadows>true</shadows>
     </scene>
 
-    <!-- Bola pra Marcacao -->
-    <model name='styro_ball'>
-      <include><uri>models/hang_the_right_wire/styro_ball</uri></include>
-      <!-- sinal negativo no segundo numero bota ela na linha esquerda -->
-      <pose degrees='true' relative_to='arena_frame'>-1.25 2.5 1.6 0 0 0</pose>
-      <!-- mexa no primeiro numero para decidir onde NA LINHA a bola fica, intervalo de [1.25,-1.25] -->
-      <static>true</static>
-    </model>
-    <!-- Bola pra Marcacao -->
-
-    <!-- Chao -->
-    <model name='ground'>
-      <include merge='true'><uri>models/miscs/ground_level</uri></include>
-    </model>
-    <!-- Chao -->
-    
-    <!-- Arena -->
-    <model name='arena'>
-      <include merge='true'><uri>models/miscs/arena</uri></include>
-      <static>true</static>
+    <frame name='above_grid'>
       <pose degrees='true'>0 0 0.02 0 0 0</pose>
+    </frame>
+
+    <model name='mission'>
+    <pose relative_to='above_grid'/>
+      <!-- Bola pra Marcacao -->
+      <model name='styro_ball'>
+        <include><uri>models/hang_the_right_wire/styro_ball</uri></include>
+        <!-- sinal negativo no segundo numero bota ela na linha esquerda -->
+        <pose degrees='true'>-1.25 2.5 1.6 0 0 0</pose>
+        <!-- mexa no primeiro numero para decidir onde NA LINHA a bola fica, intervalo de [1.25,-1.25] -->
+        <static>true</static>
+      </model>
+      <!-- Bola pra Marcacao -->
+
+      <!-- Linhas -->
+      <model name='transmission_line1'>
+        <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
+        <pose degrees='true'>0 -2.5 0 0 0 0</pose>
+        <static>true</static>
+      </model>
+
+      <model name='transmission_line2'>
+        <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
+        <pose degrees='true'>0 2.5 0 0 0 0</pose>
+        <static>true</static>
+      </model>
+      <!-- Linhas -->
     </model>
-    <!-- Arena -->
 
     <!-- Takeoff -->
     <include>
       <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-      <pose degrees='true' relative_to='arena_frame'>0 0 0 0 0 0</pose>
+      <pose degrees='true' relative_to='above_grid'>0 0 0.01 0 0 0</pose>
     </include>
     <!-- Takeoff -->
-
-    <!-- Linhas -->
-    <model name='transmission_line1'>
-      <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
-      <pose degrees='true' relative_to='arena_frame'>0 -2.5 0 0 0 0</pose>
-      <static>true</static>
-    </model>
     
-    <model name='transmission_line2'>
-      <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
-      <pose degrees='true' relative_to='arena_frame'>0 2.5 0 0 0 0</pose>
+    <!-- Arena -->
+    <include>
+      <uri>models/miscs/arena</uri>
       <static>true</static>
-    </model>
-    <!-- Linhas -->
+      <pose relative_to='above_grid'/>
+    </include>
+    <!-- Arena -->
+
+    <!-- Chao -->
+      <include>
+        <uri>models/miscs/ground_level</uri>
+        <pose/>
+      </include>
+    <!-- Chao -->
 
     <!-- Luz -->
     <light name='sun' type='directional'>
@@ -87,11 +95,11 @@
     <!-- Luz -->
 
   <spherical_coordinates>
-		<surface_model>EARTH_WGS84</surface_model>
-		<world_frame_orientation>ENU</world_frame_orientation>
-		<latitude_deg>47.397971057728974</latitude_deg>
-		<longitude_deg>8.546163739800146</longitude_deg>
-		<elevation>0</elevation>
-	</spherical_coordinates>
+    <surface_model>EARTH_WGS84</surface_model>
+    <world_frame_orientation>ENU</world_frame_orientation>
+    <latitude_deg>47.397971057728974</latitude_deg>
+    <longitude_deg>8.546163739800146</longitude_deg>
+    <elevation>0</elevation>
+  </spherical_coordinates>
   </world>
 </sdf>
