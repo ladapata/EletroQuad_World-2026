@@ -22,7 +22,7 @@
       <pose degrees='true'>0 0 0.02 0 0 0</pose>
     </frame>
 
-    <model name='mission1'>
+    <model name='mission'>
     <pose relative_to='above_grid'>0 0 0.01 0 0 0</pose>
       <!-- Gabarito ArUco -->
       <model name='gabarito'>
