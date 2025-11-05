@@ -73,7 +73,7 @@
     <include>
       <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-      <pose degrees='true' relative_to='above_grid'/>0 0 0.01 0 0 0</pose>
+      <pose degrees='true' relative_to='above_grid'>0 0 0.01 0 0 0</pose>
     </include>
     <!-- Takeoff -->
     
