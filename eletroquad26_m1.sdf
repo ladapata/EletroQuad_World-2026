@@ -22,7 +22,7 @@
       <pose degrees='true'>0 0 0.02 0 0 0</pose>
     </frame>
 
-    
+
 
     <!-- Takeoff -->
     <include>
