@@ -22,22 +22,7 @@
       <pose degrees='true'>0 0 0.02 0 0 0</pose>
     </frame>
 
-    <model name='mission'>
-    <pose relative_to='above_grid'/>
-      <!-- Linhas -->
-      <model name='transmission_line1'>
-        <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
-        <pose degrees='true'>0 -2.5 0 0 0 0</pose>
-        <static>true</static>
-      </model>
 
-      <model name='transmission_line2'>
-        <include><uri>models/hang_the_right_wire/transmission_line</uri></include>
-        <pose degrees='true'>0 2.5 0 0 0 0</pose>
-        <static>true</static>
-      </model>
-      <!-- Linhas -->
-    </model>
 
     <!-- Takeoff -->
     <include>
