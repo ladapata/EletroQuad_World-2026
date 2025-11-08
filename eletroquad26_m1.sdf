@@ -22,142 +22,7 @@
       <pose degrees='true'>0 0 0.02 0 0 0</pose>
     </frame>
 
-    <model name='mission'>
-    <pose relative_to='above_grid'>0 0 0.01 0 0 0</pose>
-      <!-- Gabarito ArUco -->
-      <model name='gabarito'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>2 2 0 0 0 -90</pose>
-        <model name='aruco'>
-          <include merge='true'><uri>models/bouncing/ArUco_marker</uri></include>
-          <pose degrees='true'>0 0 0.001 0 0 0</pose>
-        </model>
-        <model name='shape0'>
-          <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
-          <pose degrees='true'>0 0 0.001 0 0 0</pose>
-        </model>
-      </model>
-      <!-- Gabarito ArUco -->
-
-      <!-- Plataformas da Prova -->
-      <model name='3hexagon'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>3 0 0 0 0 -90</pose>
-        <model name='shape1'>
-          <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num1'>
-            <include merge='true'><uri>models/bouncing/nums/num_3</uri></include>
-           <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='4hexagon'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>2 0 0 0 0 -90</pose>
-        <model name='shape2'>
-          <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num2'>
-            <include merge='true'><uri>models/bouncing/nums/num_4</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='5hexagon'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>1 0 0 0 0 -90</pose>
-        <model name='shape3'>
-          <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num3'>
-            <include merge='true'><uri>models/bouncing/nums/num_5</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='3star'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>0 3 0 0 0 -90</pose>
-        <model name='shape4'>
-          <include merge='true'><uri>models/bouncing/shapes/star</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num4'>
-            <include merge='true'><uri>models/bouncing/nums/num_3</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='4star'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>0 2 0 0 0 -90</pose>
-        <model name='shape5'>
-          <include merge='true'><uri>models/bouncing/shapes/star</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num5'>
-            <include merge='true'><uri>models/bouncing/nums/num_4</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='5star'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>0 1 0 0 0 -90</pose>
-        <model name='shape6'>
-          <include merge='true'><uri>models/bouncing/shapes/star</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num6'>
-            <include merge='true'><uri>models/bouncing/nums/num_5</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='3triangle'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>-3 0 0 0 0 -90</pose>
-        <model name='shape7'>
-          <include merge='true'><uri>models/bouncing/shapes/triangle</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num7'>
-            <include merge='true'><uri>models/bouncing/nums/num_3</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='4triangle'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>-2 0 0 0 0 -90</pose>
-        <model name='shape8'>
-          <include merge='true'><uri>models/bouncing/shapes/triangle</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num8'>
-            <include merge='true'><uri>models/bouncing/nums/num_4</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-
-      <model name='5triangle'>
-        <include merge='true'><uri>models/miscs/default_platform</uri></include>
-        <pose degrees='true'>-1 0 0 0 0 -90</pose>
-        <model name='shape9'>
-          <include merge='true'><uri>models/bouncing/shapes/triangle</uri></include>
-          <pose degrees='true'>0 0 0.002 0 0 0</pose>
-          <model name='num9'>
-            <include merge='true'><uri>models/bouncing/nums/num_5</uri></include>
-            <pose degrees='true'>0 0 0.001 0 0 0</pose>
-          </model>
-        </model>
-      </model>
-      <!-- Plataformas da Prova -->
-    </model>
+    
 
     <!-- Takeoff -->
     <include>
@@ -169,7 +34,7 @@
     
     <!-- Arena -->
     <include>
-      <uri>models/miscs/arena</uri>
+      <uri>models/miscs/arenas/rectangle</uri>
       <static>true</static>
       <pose relative_to='above_grid'/>
     </include>
