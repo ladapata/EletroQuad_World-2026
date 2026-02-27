@@ -14,5 +14,6 @@
     <pose degrees='true'>1.48 0 0.85 0 0 0</pose>
   </model>
   <enable_wind>false</enable_wind>
+  <static>true</static>
 </model>
 </sdf>

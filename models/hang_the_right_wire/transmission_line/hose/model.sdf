@@ -33,5 +33,7 @@
     </visual>
   </link>
   <self_collide>false</self_collide>
+  <static>true</static>
+  
 </model>
 </sdf>
