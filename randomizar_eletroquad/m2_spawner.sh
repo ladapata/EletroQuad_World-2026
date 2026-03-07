@@ -1,0 +1,1 @@
+# comprimento do cabo = np.sin((points[i]-points[i-1])/2)*2*4.5
