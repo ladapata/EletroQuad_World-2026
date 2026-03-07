@@ -2,7 +2,7 @@
 
 # start-variables
 manometer_height=0.85
-pointer_height=0.8511
+pointer_height=${manometer_height}11
 pointer_alignment_offset=0.009
 general_rotation_degrees=-90
 
