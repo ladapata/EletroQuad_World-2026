@@ -25,15 +25,15 @@
     <!-- Gabarito ArUco -->
     <model name='gabarito'>
       <include merge='true'><uri>models/miscs/default_platform</uri></include>
-      <pose degrees='true'>2 2 0 0 0 0</pose>
+      <pose degrees='true'>2 2 0 0 0 0</pose> <!--line 028-->
     </model>
     <model name='aruco'>
       <include merge='true'><uri>models/bouncing/ArUco_marker</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 032-->
     </model>
     <model name='shape0'>
-      <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose>
+      <include merge='true'><uri>models/bouncing/shapes/hexagon</uri></include> <!--line 035-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 036-->
     </model>
     <!-- Gabarito ArUco -->
 
