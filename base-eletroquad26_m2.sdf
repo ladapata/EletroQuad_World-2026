@@ -18,14 +18,10 @@
       <shadows>true</shadows>
     </scene>
 
-    <frame name='above_grid'>
-      <pose degrees='true'>0 0 0.02 0 0 0</pose>
-    </frame>
-
     <!-- Bola pra Marcacao -->
     <model name='styro_ball'>
       <include><uri>models/hang_the_right_wire/styro_ball</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 28-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 24-->
       <static>true</static>
     </model>
     <!-- Bola pra Marcacao -->
@@ -33,33 +29,33 @@
     <!-- Linhas -->
     <model name='pole1'>
       <include><uri>models/hang_the_right_wire/pole</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 36-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 32-->
       <static>true</static>
     </model>
     <model name='pole2'>
       <include><uri>models/hang_the_right_wire/pole</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 41-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 37-->
       <static>true</static>
     </model>
     <model name='hose1'>
       <include><uri>models/hang_the_right_wire/hose</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 46-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 42-->
       <static>true</static>
     </model>
 
     <model name='pole3'>
       <include><uri>models/hang_the_right_wire/pole</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 52-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 48-->
       <static>true</static>
     </model>
     <model name='pole4'>
       <include><uri>models/hang_the_right_wire/pole</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 57-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 53-->
       <static>true</static>
     </model>
     <model name='hose2'>
       <include><uri>models/hang_the_right_wire/hose</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 62-->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 58-->
       <static>true</static>
     </model>
     <!-- Linhas -->
@@ -68,7 +64,7 @@
     <include>
       <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-      <pose degrees='true' relative_to='above_grid'>0 0 0.01 0 0 0</pose>
+      <pose degrees='true'>0 0 0.01 0 0 0</pose>
     </include>
     <!-- Takeoff -->
     
@@ -76,7 +72,7 @@
     <include>
       <uri>models/miscs/arenas/circle</uri>
       <static>true</static>
-      <pose relative_to='above_grid'/>
+      <pose degrees='true'>0 0 0 0 0 -90</pose>
     </include>
     <!-- Arena -->
 

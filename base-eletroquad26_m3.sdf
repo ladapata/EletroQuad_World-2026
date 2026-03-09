@@ -21,41 +21,29 @@
     <!-- Manometros -->
     <model name='manometer1'>
       <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <!-- posicao do manometro1 (mexa apenas nos 2 primeiros numeros) -->
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 25-->
-      <!-- posicao do manometro1 (mexa apenas nos 2 primeiros numeros) -->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 24-->
     </model>
     <model name='pointer1'>
       <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 31-->
-      <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 28-->
     </model>
 
     <model name='manometer2'>
       <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <!-- posicao do manometro2 (mexa apenas nos 2 primeiros numeros) -->
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 38-->
-      <!-- posicao do manometro2 (mexa apenas nos 2 primeiros numeros) -->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 33-->
     </model>
     <model name='pointer2'>
       <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 44-->
-      <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 37-->
     </model>
 
     <model name='manometer3'>
       <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <!-- posicao do manometro3 (mexa apenas nos 2 primeiros numeros) -->
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 51-->
-      <!-- posicao do manometro3 (mexa apenas nos 2 primeiros numeros) -->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 42-->
     </model>
     <model name='pointer3'>
       <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 57-->
-      <!-- o ultimo valor gira o ponteiro, valores positivos giram anti-horário -->
+      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 46-->
     </model>
     <!-- Manometros -->
 
@@ -63,9 +51,17 @@
     <include>
       <uri>models/miscs/takeoff_platform</uri>
       <static>true</static>
-      <pose degrees='true' relative_to='above_grid'>0 0 0.01 0 0 0</pose>
+      <pose degrees='true'>0 0 0.01 0 0 0</pose>
     </include>
     <!-- Takeoff -->
+
+    <!-- Arena -->
+    <include>
+      <uri>models/miscs/arenas/circle</uri>
+      <static>true</static>
+      <pose degrees='true'>0 0 0 0 0 -90</pose>
+    </include>
+    <!-- Arena -->
 
     <!-- Chao -->
     <include>
