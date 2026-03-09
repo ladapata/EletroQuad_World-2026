@@ -8,15 +8,11 @@ decimal_places_precision=1000
 min_distance_padding=((1*decimal_places_precision))
 max_iters=((?????????????????*structure_count))
 
-declare -a -r aruco platform_lines shape_lines num_lines
-aruco=("<!--line 024-->" "<!--line 028-->" "<!--line 031-->" "<!--line 032-->")
-# subtrair 4 de tudo a partir de line 069 
-platform_lines=("<!--line 039-->" "<!--line 052-->" "<!--line 069-->" "<!--line 082-->" "<!--line 095-->" "<!--line 108-->" "<!--line 121-->" "<!--line 134-->" "<!--line 147-->")
-shape_lines=("<!--line 047-->" "<!--line 060-->" "<!--line 073-->" "<!--line 086-->" "<!--line 099-->" "<!--line 112-->" "<!--line 125-->" "<!--line 138-->" "<!--line 151-->")
-num_lines=("<!--line 051-->" "<!--line 064-->" "<!--line 077-->" "<!--line 090-->" "<!--line 103-->" "<!--line 116-->" "<!--line 129-->" "<!--line 142-->" "<!--line 155-->")
-
-declare -a
-
+declare -a -r aruco_lines platform_lines shape_lines num_lines
+aruco_lines=("<!--line 024-->" "<!--line 028-->" "<!--line 031-->" "<!--line 032-->")
+platform_lines=("<!--line 039-->" "<!--line 052-->" "<!--line 065-->" "<!--line 078-->" "<!--line 091-->" "<!--line 104-->" "<!--line 117-->" "<!--line 130-->" "<!--line 143-->")
+shape_lines=("<!--line 043-->" "<!--line 056-->" "<!--line 069-->" "<!--line 082-->" "<!--line 095-->" "<!--line 108-->" "<!--line 121-->" "<!--line 134-->" "<!--line 147-->")
+num_lines=("<!--line 047-->" "<!--line 060-->" "<!--line 073-->" "<!--line 086-->" "<!--line 099-->" "<!--line 112-->" "<!--line 125-->" "<!--line 138-->" "<!--line 151-->")
 
 # end-variables
 # ======================================================================
@@ -38,6 +34,8 @@ rng_within_range() {
 # end-functions
 # ======================================================================
 # start-script
+
+# TODO: implementar a lógica para criar o aruco
 
 declare -i x y interval_chosen iter=0
 while :; do
