@@ -82,9 +82,13 @@ done
 
 cd /root/PX4-Autopilot/Tools/simulation/gz/worlds
 
+
+
 # TODO: tratar o 'result_array' pra que ele fique nos conformes do gazebo
 # (x/decimal_places_precision) - (arena_width/2)
 # (y/decimal_places_precision) - (arena_length/2)
+
+
 
 while [ iter -le ((structure_count*${#result_array[@]})) ]; do
   # (x, y, YAW, manometer_value_cap)
