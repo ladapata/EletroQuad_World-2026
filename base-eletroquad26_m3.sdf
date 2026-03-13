@@ -21,29 +21,29 @@
     <!-- Manometros -->
     <model name='manometer1'>
       <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 24-->
+      <pose degrees='true'>3 2 0.85 0 0 -90</pose> <!--line 24-->
     </model>
     <model name='pointer1'>
       <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 28-->
+      <pose degrees='true'>3 2.009 0.8511 0 0 0</pose> <!--line 28-->
     </model>
 
     <model name='manometer2'>
       <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 33-->
+      <pose degrees='true'>-4 5 0.85 0 0 -90</pose> <!--line 33-->
     </model>
     <model name='pointer2'>
       <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 37-->
+      <pose degrees='true'>-4 5.009 0.8511 0 0 0</pose> <!--line 37-->
     </model>
 
     <model name='manometer3'>
       <include merge='true'><uri>models/faulty_or_not/manometer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 42-->
+      <pose degrees='true'>-2 -5 0.85 0 0 -90</pose> <!--line 42-->
     </model>
     <model name='pointer3'>
       <include merge='true'><uri>models/faulty_or_not/manometer_pointer</uri></include>
-      <pose degrees='true'>0 0 0 0 0 0</pose> <!--line 46-->
+      <pose degrees='true'>-2 -5.009 0.8511 0 0 0</pose> <!--line 46-->
     </model>
     <!-- Manometros -->
 
