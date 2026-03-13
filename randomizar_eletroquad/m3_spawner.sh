@@ -2,11 +2,13 @@
 
 # start-variables
 
-declare -i -r structure_count decimal_places_precision min_distance_padding max_iters pointer_alignment_offset
+declare -i -r structure_count decimal_places_precision min_distance_padding max_iters arena_width arena_length pointer_alignment_offset
 structure_count=3
 decimal_places_precision=1000
 min_distance_padding=((1*decimal_places_precision))
 max_iters=((4*structure_count))
+arena_width=7
+arena_length=13
 pointer_alignment_offset=9 # *1000 para transformar em inteiro
 
 declare -a -r min_valid_angle_array max_valid_angle_array manometer_value_cap manometer_lines pointer_lines
@@ -34,7 +36,7 @@ declare -a result_array=()
 # ======================================================================
 # start-functions
 
-rng_within_range() {
+RNG_within_range() {
   local -i min max
   min=$1
   max=$2
@@ -56,8 +58,8 @@ while :; do
   if [ iter -eq max_iters ]; then
     break
   fi
-  x=$(rng_within_range 0 ((7*min_distance_padding)))
-  y=$(rng_within_range 0 ((13*min_distance_padding)))
+  x=$(RNG_within_range 0 ((arena_width*min_distance_padding)))
+  y=$(RNG_within_range 0 ((arena_length*min_distance_padding)))
   if [ x*x + y*y -lt min_distance_padding ]; then
     continue # if the euclidean distance from the chosen numbers from the coordinates (0,0) is smaller than the parameter, goes all the way to the beggining
   else
@@ -66,34 +68,37 @@ while :; do
       result_array+=y
     else
       until [ (((x-$(result_array[iter]))*(x-$(result_array[iter])) + (y-$(result_array[iter+1]))*(y-$(result_array[iter+1])))) -ge min_distance_padding ]; do
-        x=$(rng_within_range 0 ((7*min_distance_padding)))
-        y=$(rng_within_range 0 ((13*min_distance_padding)))
+        x=$(RNG_within_range 0 ((arena_width*min_distance_padding)))
+        y=$(RNG_within_range 0 ((arena_length*min_distance_padding)))
       done
     fi
   fi
   # chooses the interval where the manometer pointer is pointing and appends it to 'result_array'
-  interval_chosen=$(rng_within_range 0 4)
-  result_array+=(($(rng_within_range $(min_valid_angle_array[interval_chosen]) $(max_valid_angle_array[interval_chosen]))) + 90)%360
-  result_array+=$(max_valid_angle_array[interval_chosen])
+  interval_chosen=$(RNG_within_range 0 4)
+  result_array+=(($(RNG_within_range $(min_valid_angle_array[interval_chosen]) $(max_valid_angle_array[interval_chosen]))))%360
+  result_array+=$(manometer_value_cap[interval_chosen])
   iter=iter+4
 done
 
 cd /root/PX4-Autopilot/Tools/simulation/gz/worlds
 
 # TODO: tratar o 'result_array' pra que ele fique nos conformes do gazebo
-# (x/decimal_places_precision) - (7/2)
-# (y/decimal_places_precision) - (13/2)
+# (x/decimal_places_precision) - (arena_width/2)
+# (y/decimal_places_precision) - (arena_length/2)
 
 while [ iter -le ((structure_count*${#result_array[@]})) ]; do
- local -i iter=0
-  # substituir o item do arquivo na linha correta como:
   # (x, y, YAW, manometer_value_cap)
-  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.86 0 0 -90</pose>
-  # <pose degrees='true'>${result_array[iter]}+0.009 ${result_array[iter+1]} 0.861 0 0 ${result_array[iter+2]}</pose>
-
-  # <pose degrees='true'>x_coord(+north -south)+0.009 y_coord(+west -east) pointer_offset 0 0 pointer_angle</pose>
+  local -i iter=0 line=24
+ 
+  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.86 0 0 -90</pose> $(manometer_lines[iter])
+  edit='echo "<pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.86 0 0 -90</pose> $(manometer_lines[iter])"'
+  sed -i -n ''\"$(line)\"'s/'\"$(edit)\"'' eletroquad26_m3.sdf
+  # <pose degrees='true'>${result_array[iter]}+0.009 ${result_array[iter+1]} 0.861 0 0 ${result_array[iter+2]}</pose> $(pointer_lines[iter])
+  edit='echo "<pose degrees='true'>${result_array[iter]}+0.009 ${result_array[iter+1]} 0.861 0 0 ${result_array[iter+2]}</pose> $(pointer_lines[iter])"'
+  sed -i -n ''\"$(line+4)\"'s/'\"$(edit)\"'' eletroquad26_m3.sdf
 
   iter=iter+4
+  line=line+9
 done
 
 cat << EOF > /root/harpia_ws/src/eletroquad_m3/config/params.yaml

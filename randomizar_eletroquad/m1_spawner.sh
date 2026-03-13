@@ -2,23 +2,25 @@
 
 # start-variables
 
-declare -i -r structure_count decimal_places_precision min_distance_padding max_iters
-structure_count=9
+declare -i -r structure_count decimal_places_precision min_distance_padding max_iters arena_width arena_length
+structure_count=10
 decimal_places_precision=1000
 min_distance_padding=((1*decimal_places_precision))
-max_iters=((?????????????????*structure_count))
+max_iters=((2*structure_count+1))
+arena_width=7
+arena_length=13
 
-declare -a -r aruco_lines platform_lines shape_lines num_lines
-aruco_lines=("<!--line 024-->" "<!--line 028-->" "<!--line 031-->" "<!--line 032-->")
-platform_lines=("<!--line 039-->" "<!--line 052-->" "<!--line 065-->" "<!--line 078-->" "<!--line 091-->" "<!--line 104-->" "<!--line 117-->" "<!--line 130-->" "<!--line 143-->")
-shape_lines=("<!--line 043-->" "<!--line 056-->" "<!--line 069-->" "<!--line 082-->" "<!--line 095-->" "<!--line 108-->" "<!--line 121-->" "<!--line 134-->" "<!--line 147-->")
-num_lines=("<!--line 047-->" "<!--line 060-->" "<!--line 073-->" "<!--line 086-->" "<!--line 099-->" "<!--line 112-->" "<!--line 125-->" "<!--line 138-->" "<!--line 151-->")
+declare -a -r aruco_shapes platform_lines shape_lines num_lines
+aruco_shapes=("hexagon" "star" "triangle")
+platform_lines=("<!--line 024-->" "<!--line 039-->" "<!--line 052-->" "<!--line 065-->" "<!--line 078-->" "<!--line 091-->" "<!--line 104-->" "<!--line 117-->" "<!--line 130-->" "<!--line 143-->")
+shape_lines=("<!--line 028-->" "<!--line 043-->" "<!--line 056-->" "<!--line 069-->" "<!--line 082-->" "<!--line 095-->" "<!--line 108-->" "<!--line 121-->" "<!--line 134-->" "<!--line 147-->")
+num_lines=("<!--line 032-->" "<!--line 047-->" "<!--line 060-->" "<!--line 073-->" "<!--line 086-->" "<!--line 099-->" "<!--line 112-->" "<!--line 125-->" "<!--line 138-->" "<!--line 151-->")
 
 # end-variables
 # ======================================================================
 # start-functions
 
-rng_within_range() {
+RNG_within_range() {
   local -i min max
   min=$1
   max=$2
@@ -35,15 +37,17 @@ rng_within_range() {
 # ======================================================================
 # start-script
 
-# TODO: implementar a lógica para criar o aruco
+# chooses the shape for the ArUco marker
+result_array+=$(aruco_shapes[$(RNG_within_range 0 2)])
 
-declare -i x y interval_chosen iter=0
+# positions all of the platforms everywhere
+declare -i x y iter=1
 while :; do
   if [ iter -eq max_iters ]; then
     break
   fi
-  x=$(rng_within_range 0 ((7*min_distance_padding)))
-  y=$(rng_within_range 0 ((13*min_distance_padding)))
+  x=$(RNG_within_range 0 ((arena_width*min_distance_padding)))
+  y=$(RNG_within_range 0 ((arena_length*min_distance_padding)))
   if [ x*x + y*y -lt min_distance_padding ]; then
     continue # if the euclidean distance from the chosen numbers from the coordinates (0,0) is smaller than the parameter, goes all the way to the beggining
   else
@@ -52,37 +56,58 @@ while :; do
       result_array+=y
     else
       until [ (((x-$(result_array[iter]))*(x-$(result_array[iter])) + (y-$(result_array[iter+1]))*(y-$(result_array[iter+1])))) -ge min_distance_padding ]; do
-        x=$(rng_within_range 0 ((7*min_distance_padding)))
-        y=$(rng_within_range 0 ((13*min_distance_padding)))
+        x=$(RNG_within_range 0 ((arena_width*min_distance_padding)))
+        y=$(RNG_within_range 0 ((arena_length*min_distance_padding)))
       done
     fi
   fi
-
-
-
-# TODO: implementar a lógica de atribuir shape e num
-
-
-
+  iter=iter+2
 done
+
+# TODO: tratar o 'result_array' pra que ele fique nos conformes do gazebo
+# (x/decimal_places_precision) - (arena_width/2)
+# (y/decimal_places_precision) - (arena_length/2)
 
 cd /root/PX4-Autopilot/Tools/simulation/gz/worlds
 
-# TODO: tratar o 'result_array' pra que ele fique nos conformes do gazebo
-# (x/decimal_places_precision) - (7/2)
-# (y/decimal_places_precision) - (13/2)
-
+declare -i iter=3 index=0 line=39
 while [ iter -le ((structure_count*${#result_array[@]})) ]; do
- local -i iter=0
-  # substituir o item do arquivo na linha correta como:
-  # (x, y, shape, num)
-  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0 0 0 -90</pose>
-  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.001 0 0 -90</pose>
-  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.002 0 0 -90</pose>
 
-  # <pose degrees='true'>x_coord(+north -south)+0.009 y_coord(+west -east) pointer_offset 0 0 pointer_angle</pose>
+  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.02 0 0 -90</pose> ${platform_lines[index]}
+  edit='echo "<pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.02 0 0 -90</pose> ${platform_lines[index]}"'
+  sed -i -n ''\"$(line)\"'s/'\"$(edit)\"'' eletroquad26_m1.sdf
+  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.021 0 0 -90</pose> ${shape_lines[index]}
+  edit='echo "<pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.021 0 0 -90</pose> ${shape_lines[index]}"'
+  sed -i -n ''\"$(line+4)\"'s/'\"$(edit)\"'' eletroquad26_m1.sdf
+  # <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.022 0 0 -90</pose> ${num_lines[index]}
+  edit='echo "<pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.022 0 0 -90</pose> ${num_lines[index]}"'
+  sed -i -n ''\"$(line+8)\"'s/'\"$(edit)\"'' eletroquad26_m1.sdf
 
-  iter=iter+?????????????????
+  iter=iter+2
+  index=index+1
+  line=line+13
 done
+
+# changes the aruco platform
+declare -i line=24
+# <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.02 0 0 -90</pose> ${platform_lines[index]}
+edit='echo "<pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.02 0 0 -90</pose> ${platform_lines[index]}"'
+sed -i -n ''\"$(line)\"'s/'\"$(edit)\"'' eletroquad26_m1.sdf
+
+# <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.021 0 0 -90</pose> ${shape_lines[index]}
+edit='echo "<pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.021 0 0 -90</pose> ${shape_lines[index]}"'
+sed -i -n ''\"$(line+4)\"'s/'\"$(edit)\"'' eletroquad26_m1.sdf
+
+# <include merge='true'><uri>models/bouncing/shapes/${result_array[0]}</uri></include> <!--line 031-->
+edit='echo "<include merge='true'><uri>models/bouncing/shapes/${result_array[0]}</uri></include> <!--line 031-->"'
+sed -i -n '31s/'\"$(edit)\"'' eletroquad26_m1.sdf
+
+# <pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.022 0 0 -90</pose> ${num_lines[index]}
+edit='echo "<pose degrees='true'>${result_array[iter]} ${result_array[iter+1]} 0.022 0 0 -90</pose> ${num_lines[index]}"'
+sed -i -n ''\"$(line+8)\"'s/'\"$(edit)\"'' eletroquad26_m1.sdf
+
+
+# cd /root/PX4-Autopilot/Tools/simulation/gz/worlds/models/bouncing/ArUco_marker/materials/textures
+
 
 echo "This script took $SECONDS to run."

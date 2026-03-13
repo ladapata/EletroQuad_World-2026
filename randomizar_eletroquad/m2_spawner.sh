@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # start-variables
+
 declare -r ball_line="<!--line 24-->"
 
-declare -i -r ball_and_hoses_height
+declare -i -r ball_and_hoses_height arena_radius
 ball_and_hoses_height=1.6
+arena_radius=7
 
 declare -a pole_lines hose_lines hose_length_lines
 pole_lines=("<!--line 32-->" "<!--line 37-->" "<!--line 48-->" "<!--line 53-->")
@@ -15,7 +17,7 @@ hose_length_string=("<length>?</length>")
 # ======================================================================
 # start-functions
 
-rng_within_range() {
+RNG_within_range() {
   local -i min max
   min=$1
   max=$2
